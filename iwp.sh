@@ -1,4 +1,4 @@
-#1/bin/bash
+#!/bin/bash
 
 apt install apache2 php libapache2-mod-php php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc unzip nfs-common -y
 cd /var/www/html/
