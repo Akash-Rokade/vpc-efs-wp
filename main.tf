@@ -233,9 +233,13 @@ resource "aws_db_subnet_group" "default" {
   }
 }
 
-#data "template_file" "user_data" {
-#template =file("./ubuntu.tpl")
-#}
+data "template_file" "user_data" {
+template =file("../wp.tpl")
+ vars = {
+    efs_id      = aws_efs_file_system.efs.id
+}
+}
+
 
 
 #--------------------------
@@ -246,7 +250,7 @@ resource "aws_instance" "ec2" {
     instance_type = var.instance_type
     subnet_id = aws_subnet.public1.id
     vpc_security_group_ids = [ aws_security_group.ec2.id ]
-#  user_data       = data.template_file.user_data.rendered
+    user_data       = data.template_file.user_data.rendered
     key_name= "20"
     associate_public_ip_address = true
     tags= {
