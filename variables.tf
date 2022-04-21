@@ -1,3 +1,8 @@
+variable "keyname"{
+type =string
+description="Key Name Required: "
+}
+
 variable "ami" {}
 variable "instance_type" {}
 
