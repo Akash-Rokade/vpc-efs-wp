@@ -251,7 +251,7 @@ resource "aws_instance" "ec2" {
     subnet_id = aws_subnet.public1.id
     vpc_security_group_ids = [ aws_security_group.ec2.id ]
     user_data       = data.template_file.user_data.rendered
-    key_name= "20"
+    key_name= var.keyname
     associate_public_ip_address = true
     tags= {
         Name = "terraform_ec2"
