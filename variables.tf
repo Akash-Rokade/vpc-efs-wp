@@ -2,6 +2,14 @@ variable "keyname"{
 type =string
 description="Key Name Required: "
 }
+variable "accessKey"{
+type =string
+description="access key ID "
+}
+variable "secretKey"{
+type =string
+description="secret key  "
+}
 
 variable "ami" {}
 variable "instance_type" {}
